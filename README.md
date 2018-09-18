@@ -8,3 +8,5 @@ Requires a Go environment to build binaries.
 Or you can optionally set the `DISCORD_TOKEN` environment variable and simply run:
 
 `texcord`
+
+Messages are prefixed with "TEX: " followed by basic TeX formatting.
