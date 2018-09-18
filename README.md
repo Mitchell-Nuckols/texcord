@@ -1,5 +1,5 @@
 # Texcord
-Very small Discord selfbot for outputting TeX formatted images
+Very small Discord selfbot for outputting TeX formatted images.
 Requires a Go environment to build binaries.
 
 ## Usage:
