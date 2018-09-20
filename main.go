@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"log"
 	"net/url"
 	"os"
@@ -27,6 +26,8 @@ func init() {
 }
 
 func main() {
+	log.Println("Starting Texcord...")
+
 	discord, err := discordgo.New(tok)
 	if err != nil {
 		log.Panic(err)
@@ -37,11 +38,11 @@ func main() {
 
 	err = discord.Open()
 	if err != nil {
-		fmt.Println("error opening connection,", err)
+		log.Println("Error opening connection,", err)
 		return
 	}
 
-	fmt.Println("Bot is now running.  Press CTRL-C to exit.")
+	log.Println("Bot started")
 	sc := make(chan os.Signal, 1)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt, os.Kill)
 	<-sc
