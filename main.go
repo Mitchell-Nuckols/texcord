@@ -51,11 +51,12 @@ func main() {
 }
 
 func messageEvent(s *discordgo.Session, m *discordgo.MessageCreate) {
-	if m.Author.ID != s.State.User.ID || !strings.HasPrefix(m.Message.Content, "TEX: ") {
+	if m.Author.ID != s.State.User.ID || !strings.HasPrefix(m.Message.Content, "TEX:") {
 		return
 	}
 
-	tex := strings.Replace(m.Message.Content, "TEX: ", "", 1)
+	tex := strings.Replace(m.Message.Content, "TEX:", "", 1)
+	tex = strings.Replace(tex, "```", "", -1)
 	tex = strings.Replace(tex, "\n", "", -1)
 
 	u := "https://chart.googleapis.com/chart?cht=tx&chs=100&chl=" + url.QueryEscape(tex)

@@ -9,4 +9,4 @@ Or you can optionally set the `DISCORD_TOKEN` environment variable and simply ru
 
 `texcord`
 
-Messages are prefixed with "TEX: " followed by basic TeX formatting.
+Messages are prefixed with `TEX:` followed by basic TeX formatting. You can also surround your text with `\```\` in the beginning and end for easy multiline text.
